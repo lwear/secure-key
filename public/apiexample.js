@@ -25,7 +25,6 @@ function getData() {
 // get data from api
 function fetchActivity() {
   fetch('/getdata')
-    .then(response => response.json())
     .then(data => updateData(data) 
     );
 } // window.onload 

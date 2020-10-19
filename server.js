@@ -21,7 +21,7 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/index.html");
 });
 
-// get data from api
+ // Handle requests for the data
 app.get('/getData', fetchData);
 
 
@@ -33,10 +33,10 @@ const listener = app.listen(process.env.PORT, () => {
 
 // get activity from bored api
 function fetchData() {
+  console.log("fetching data");
     fetch(BASE_URL, {
     method: "GET",
     headers: {'x-api-key': API_KEY}
   })
-    .then(response => {return response.json();}
-    );
+    .then(response => {return response.json();});
 } 
