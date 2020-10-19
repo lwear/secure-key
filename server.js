@@ -33,11 +33,10 @@ const listener = app.listen(process.env.PORT, () => {
 
 // get activity from bored api
 function fetchData() {
-  fetch(BASE_URL, {
-  method: "GET",
-  headers: {'x-api-key': API_KEY}
-})
-    .then(response => response.json())
-    .then(data => changeActivity(data) 
+    fetch(BASE_URL, {
+    method: "GET",
+    headers: {'x-api-key': API_KEY}
+  })
+    .then(response => {return response.json();}
     );
-} // window.onload */
+} 
