@@ -1,17 +1,17 @@
 
 
-var activityDiv;
+var elem;
 
 
 // initialize variables after page loads
 window.onload = function() {
-  activityDiv  = document.getElementById("activity");
+  elem  = document.getElementById("activity");
 } // window.onload
 
 
 function getData() {
   console.log("getting data ");
-  return fetch(`/getdata`)
+  return fetch('/getdata')
       .then((response) => {
         return response.json();
       })
@@ -22,22 +22,19 @@ function getData() {
 
 
 
-// get activity from bored api
+// get data from api
 function fetchActivity() {
-  fetch('https://api.thecatapi.com/v1/images/search', {
-  method: "GET",
-  headers: {'x-api-key': process.env.SECRET}
-})
+  fetch('/getdata')
     .then(response => response.json())
-    .then(data => changeActivity(data) 
+    .then(data => updateData(data) 
     );
 } // window.onload 
  
 
 // change the activity displayed 
-function changeActivity(data) {
+function updateData(data) {
   console.log(data); 
-  activityDiv.src = data[0].url;
+  elem.src = data[0].url;
 } // changeActivity
 
 
