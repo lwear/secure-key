@@ -47,9 +47,8 @@ function fetchData(req , response) {
       return response.json();
       
       
-    }).then((data) => console.log(data)             //response.json(data)
+    }).then((data) => {console.log(data); return data;}             //response.json(data)
     ).catch((err) => {
         console.error('API Error:', err.message);
-    //resp.json(generateFakeForecast(location));
   });
 } 
