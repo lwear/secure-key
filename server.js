@@ -32,7 +32,7 @@ const listener = app.listen(process.env.PORT, () => {
 });
 
 // get activity from bored api
-function fetchData() {
+function fetchData(req , response) {
   console.log("fetching data");
   
   fetch(BASE_URL, {
@@ -44,11 +44,12 @@ function fetchData() {
        if (response.status !== 200) {
           throw new Error(response.statusText);
        }
-     var foo = response.json();
-      console.log(foo);
-      return foo;
-    }).catch((err) => {
-    console.error('Dark Sky API Error:', err.message);
+      return response.json();
+      
+      
+    }).then((data) => console.log(data)             //response.json(data)
+    ).catch((err) => {
+        console.error('API Error:', err.message);
     //resp.json(generateFakeForecast(location));
   });
 } 
