@@ -4,7 +4,13 @@
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
+const fetch = require('node-fetch');
 const app = express();
+
+const API_KEY = process.env.SECRET;
+const BASE_URL = 'https://api.thecatapi.com/v1/images/search';
+
+
 
 // our default array of dreams
 const dreams = [
