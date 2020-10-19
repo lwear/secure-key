@@ -39,16 +39,10 @@ function fetchData(req , response) {
     method: "GET",
     headers: {'x-api-key': API_KEY}
   })
-    .then(response => {
-    console.log(response.status);
-       if (response.status !== 200) {
-          throw new Error(response.statusText);
-       }
-      return response.json();
-      
-      
-    }).then((data) => {console.log(data); return data;}             //response.json(data)
-    ).catch((err) => {
+    .then(response => response.json())
+ //   .then(data => response.json(data))
+    .catch((err) => {
         console.error('API Error:', err.message);
   });
 } 
+// {console.log(data); return response.json(data);}

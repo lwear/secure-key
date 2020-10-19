@@ -26,7 +26,8 @@ function getData() {
 function getData() {
   console.log("getting data ");
   fetch('/getdata')
-    .then(data => {console.log(data); updateData(data);} 
+    .then(response => response.json())
+    .then(data => {console.log("data"); updateData(data);} 
     ).catch((err) => {
         console.error('API Error:', err.message);
     //resp.json(generateFakeForecast(location));
