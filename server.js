@@ -31,18 +31,16 @@ const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
-// get activity from bored api
+// get data from API
 function fetchData(req , response) {
-  console.log("fetching data");
   
   fetch(BASE_URL, {
     method: "GET",
     headers: {'x-api-key': API_KEY}
   })
-   .then(response => response.json()) // get the json string
-   .then(data => response.json(data)) // returns a json object to app
+   .then(response => response.json()) // get the json from the response
+   .then(data => response.json(data)) // returns the json to the app as an object
    .catch((err) => {
         console.error('API Error:', err.message);
   });
 } 
-// {console.log(data); return response.json(data);}

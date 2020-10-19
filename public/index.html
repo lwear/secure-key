@@ -12,9 +12,10 @@
   </head>
   
   <body>
-     <h1>What Should I Do Today?</h1>
+     <h1>Random Cat Pics</h1>
+      <button id="button" onclick="getData()">Get Another Cat!</button><br>
      <img src="https://cdn2.thecatapi.com/images/avc.jpg" id="pic"><br><br>
-     <button id="button" onclick="getData()">Suggest New Activity</button>
+   
       <p>This script gets random cat pics from <a href="https://api.thecatapi.com/v1/images/search">The Cat API</a>. It uses
         .env to hide the API key, and node-fetch in server.js to hide API key.
       </p>
