@@ -39,9 +39,9 @@ function fetchData(req , response) {
     method: "GET",
     headers: {'x-api-key': API_KEY}
   })
-    .then(response => response.json())
- //   .then(data => response.json(data))
-    .catch((err) => {
+   .then(response => response.json()) // get the json string
+   .then(data => response.json(data)) // returns a json object to app
+   .catch((err) => {
         console.error('API Error:', err.message);
   });
 } 

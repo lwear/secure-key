@@ -5,21 +5,8 @@ var elem;
 
 // initialize variables after page loads
 window.onload = function() {
-  elem  = document.getElementById("activity");
+  elem  = document.getElementById("pic");
 } // window.onload
-
-/*
-function getData() {
-  console.log("getting data ");
-  return fetch('/getdata')
-      .then((response) => {
-        return response.json();
-      })
-      .catch(() => {
-        return null;
-      });
-}*/
-
 
 
 // get data from api
